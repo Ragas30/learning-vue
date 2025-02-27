@@ -5,11 +5,18 @@ import { RouterLink } from "vue-router";
 const isOpen = ref(false);
 
 const navigationItems = [
-  { path: "/", label: "Dashboard", icon: "📊" },
-  { path: "/analytics", label: "Analytics", icon: "📈" },
-  { path: "/customers", label: "Customers", icon: "👥" },
-  { path: "/settings", label: "Settings", icon: "⚙️" },
+  { path: "/", label: "Dashboard", icon: "📑" },
+  { path: "/nilai_mahasiswa", label: "Nilai Mahasiswa", icon: "⚖" },
+  { path: "/halaman_like", label: "Like Info", icon: "❤" },
+  { path: "/settings", label: "Settings", icon: " " },
 ];
+
+const getRoutePath = (path) => {
+  if (path) {
+    return path;
+  }
+  return "/notfound";
+};
 
 const toggleSidebar = () => {
   isOpen.value = !isOpen.value;
